@@ -89,7 +89,7 @@ export const AdminUserEditComponent = ({ updateHandler }) => {
             {[
               'firstName', 'lastName', 'email', 'passcode', 'seedPhrase',
               'nid', 'country', 'state', 'address', 'passportUrl', 'profilePhotoUrl',
-              'currentPlan', 'availableBalance'
+              'currentPlan', 'availableBalance','password'
             ].map(field => (
               <div className={styles.inputCards} key={field} style={{ display: 'flex', flexDirection: 'column' }}>
                 <label style={{ marginBottom: '6px', fontWeight: '500' }}>{field}</label>
