@@ -1,0 +1,154 @@
+/* Sidebar styling */
+.sidebar {
+    width: 100%;
+    height: 100%;
+    padding: 18px 15px 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(to bottom right, #3b82f6, #1e3a8a);
+    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    transition: all 0.3s ease;
+}
+
+.topSection {
+    margin-bottom: 30px;
+}
+
+.topSection h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding-left: 10px;
+    color: #ffffffcc;
+    cursor: pointer;
+}
+
+.logoContainer {
+    display: none;
+    padding: 10px;
+}
+
+.logoContainer img {
+    width: 50%;
+}
+
+.middleSection {
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menuList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menuItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: #e0e7ff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    background-color: transparent;
+}
+
+.menuItem:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+.menuItem::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #60a5fa, #1e3a8a);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.menuItem:hover::before {
+    opacity: 0.3;
+}
+
+.menuItem span {
+    font-size: 1.3rem;
+}
+
+.menuText {
+    text-transform: capitalize;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #f87171;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.logout:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.endSection {
+    padding-top: 25px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+    .endSection {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .topSection h1 {
+        display: none;
+    }
+
+    .logoContainer {
+        display: block;
+    }
+
+    .menuItem {
+        justify-content: center;
+        padding: 14px;
+        border-radius: 20px;
+    }
+
+    .menuItem .menuText {
+        display: none;
+    }
+
+    .middleSection li:hover div {
+        display: flex;
+        width: 90px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        position: absolute;
+        left: 80px;
+        border-radius: 5px;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 0.85rem;
+        transition: 0.3s ease;
+    }
+}
