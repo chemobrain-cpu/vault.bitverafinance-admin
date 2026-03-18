@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import ReactS3 from "react-s3";
 import { Buffer } from "buffer";
 import styles from "./CopyTradeForm.module.css";
+import { type } from "os";
 
 window.Buffer = window.Buffer || Buffer;
 
@@ -140,54 +141,63 @@ export const CopyTradeFormComponent = ({ updateHandler }) => {
       field: "traderTag",
       placeholder: "Enter Expert Trader Tag",
       info: "",
+      type:'text'
     },
     {
       label: "Trader Name",
       field: "traderName",
       placeholder: "Enter Expert Trader Name",
       info: "",
+       type:'text'
     },
     {
       label: "Expert Trader Number of Followers",
       field: "followers",
       placeholder: "Enter Followers",
       info: "",
+      type: 'number'
     },
     {
       label: "Expert Total Profit ($)",
       field: "totalProfit",
       placeholder: "Enter Profit",
       info: "",
+      type: 'number'
     },
     {
       label: "Copy Trade Type",
       field: "copyTradeType",
       placeholder: "Copy",
       info: "",
+       type:'text'
     },
     {
       label: "Active Days",
       field: "activeDays",
       placeholder: "Days",
       info: "",
+      type: 'number'
     },
     {
       label: "Winning Rate (%)",
       field: "winningRate",
       placeholder: "0",
       info: "",
+      type: 'number'
     },
     {
       label: "Startup Amount ($)",
       field: "startupAmount",
       placeholder: "Amount",
       info: "",
+      type: 'number'
     },
     {
       label: "Rating",
       field: "rating",
       placeholder: "Rating",
       info: "",
+      type: 'number'
     },
   ];
 
@@ -214,7 +224,7 @@ export const CopyTradeFormComponent = ({ updateHandler }) => {
       >
         <form onSubmit={submitHandler} style={{ display: "grid", gap: "15px" }}>
 
-          {formFields.map(({ label, field, placeholder, info }) => (
+          {formFields.map(({ label, field, placeholder, info,type }) => (
 
             <div key={field} style={{ display: "flex", flexDirection: "column" }}>
 
@@ -231,6 +241,7 @@ export const CopyTradeFormComponent = ({ updateHandler }) => {
                   borderRadius: "6px",
                   border: "1px solid #ddd",
                 }}
+                
               />
 
               {info && <p className={styles.info}>{info}</p>}
