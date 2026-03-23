@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import ReactS3 from "react-s3";
 import { Buffer } from "buffer";
 import styles from "./CopyTradeForm.module.css";
-import { type } from "os";
 
 window.Buffer = window.Buffer || Buffer;
 
